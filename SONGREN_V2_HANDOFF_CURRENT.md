@@ -71,3 +71,16 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 ## 後續接手提示
 
 接續時以 W04 的本機和 main 正式站內容為基準，先讀 SONGREN_W04_CATEGORY_PLAN.md 和最新施工報告。未來若要修改或發布，需依當次授權執行；本輪 W04 授權已用於上述 PR #4。
+
+## W05 中斷接軌狀態（2026-10-17）
+
+接軌代號：`SONGREN-W05-RECOVERY-20261017`。本節是恢復後最新狀態，前文 W01–W04 為歷史紀錄。
+
+- 已確認 W05 原有 12 份 HTML、assets/css/site.css、assets/js/site.js、六張候選 WebP 均存在；恢復前 24 份檔案複製至 F:\架站客\客戶\松仁草廬\W05-recovery-backup-20261017，含 SHA-256 manifest。
+- 修復桌機下拉競態與 Escape 後重開問題；本機瀏覽器確認預設收合、垂直三項、click/hover/鍵盤焦點展開、click/Escape/外部點擊收合。
+- 人物 Hero 改用完整的 w05-figure-weathered-full.webp，分類卡同步；帶醒目標籤候選圖排除，IMG_3336 細節圖裁除左側標籤。
+- 本機 11 個內容路徑 HTTP 200；81 個 HTML 引用資源 HTTP 200；node --check assets/js/site.js 通過。約 1200px 畫面檢查首頁、分類總覽、人物首圖和燈箱。
+- 珍藏分類僅佛教造像 /sculpture/、木藝與肖楠 /wood-art/、古典人物造像 /collections/figures/。手珠大賞/賽況由木藝頁相關入口、名家淺說由收藏理念、草廬藝廊由首頁與頁尾進入；舊頁保留。
+- 遠端 main 基準 362a48649626c2d8ddd00f92111b65ab808fb14f。初次補文件時 W05 尚未發布；發布後須補 PR、merge commit、Pages 與正式站結果。
+- 本機瀏覽器約 1200px 未見水平捲軸；已修正 .hero-side-note 原 right:-34px 為桌機 10px、手機 8px，移除 main{overflow:clip}。目前無法設定/讀取 1440、1640、768、390px 或 DOM scrollWidth，故這些尺寸未驗；也未保存截圖檔。不得宣稱全尺寸通過。
+- 完整記錄見 SONGREN_W05_NAV_IMAGE_FIX.md；圖片、分類與施工報告末尾已補 W05 章節。

@@ -114,3 +114,18 @@
 ### 敏感畫作排除
 
 未將有明顯女性胸部裸露的畫作及其同組照片用於前台、首圖、縮圖或燈箱：數位攝影/980815/IMG_0931.JPG–IMG_0943.JPG 同組影像，以及數位攝影/990306收檔/官網用16張/DSCN0770.JPG。檔案只留在原素材位置，不加入網站 assets。對畫面無法判斷者採排除處理。
+
+## W05 古典人物造像圖片對照（2026-10-17）
+
+本輪檢視六張候選來源，五張進站；來源均非禁止的 數位攝影\提供照1。原始尺寸/用途：
+
+| 原始來源 | 網站圖檔 | 原始尺寸與用途 |
+|---|---|---|
+| 數位攝影\IMG_3336.JPG | w05-figure-warrior-detail-clean.webp | 768×1024；裁左側 44px 後為 724×1024，僅作局部細節 |
+| 數位攝影\IMG_3344.JPG | w05-figure-red-robed-full.webp | 768×1024；紅袍人物全貌 |
+| 數位攝影\IMG_3345.JPG | w05-figure-red-robed-profile.webp | 768×1024；紅袍人物側面 |
+| 數位攝影\官網用16張\DSCN1556.JPG | w05-figure-weathered-full.webp | 3000×4000；含人物與底座，Hero/分類代表 |
+| 數位攝影\官網用16張\DSCN0874.JPG | w05-figure-mounted-rider-full.webp | 4000×3000；騎馬人物全貌及展示空間 |
+| 數位攝影\IMG_3334.JPG | 未使用 | 醒目粉紅標籤干擾，淘汰 |
+
+全貌圖採自然比例/contain，局部圖標為細節。W04 舊圖 figure-sage-frontal、figure-thinker-full、figure-thinker-detail、figure-red-robed-front、figure-red-robed-profile、figure-green-robed 已由人物頁新圖替換；檢查須比對完整路徑，避免將 w05-figure 子字串誤判。分類卡與人物 Hero 同用 weathered 全貌。原始照片和 web/ 未修改。
