@@ -163,3 +163,16 @@
 - 正式站 HTTP 資源檢查不等同瀏覽器畫面或手機操作測試；視覺尺寸、手機子選單點擊、作品燈箱互動仍未作本輪人工瀏覽器驗收。
 
 詳細分類配置見 SONGREN_W04_CATEGORY_PLAN.md；圖片來源表見 SONGREN_V2_IMAGE_MAPPING.md；視覺變更及驗收記錄見 SONGREN_W03_VISUAL_AUDIT.md 的 W04 延續節。
+
+## W05 中斷恢復與本機驗收（2026-10-17）
+
+接軌代號：`SONGREN-W05-RECOVERY-20261017`。以下為 W05 對 W04 的增量修正，未重建網站。
+
+- 改動 12 份 HTML：首頁、404、about、artists、bead-awards、bead-contest、collections、collections/figures、gallery、sculpture、visit、wood-art。統一三項藝術品分類導覽，保留原有獨立頁內容與替代入口。
+- 修改 assets/css/site.css：下拉直向及父層下定位；修正 .hero-side-note 原 right:-34px 外凸，桌機/手機調整至 10px/8px；移除 main{overflow:clip}。人物全貌自然比例/contain，細節分組展示，分類 Hero 高度調整。
+- 修改 assets/js/site.js：修正 pointer enter/click 展開狀態競爭及 Escape 焦點重開；操作確認 click、hover、鍵盤焦點、Escape、外部點擊、手機選單和燈箱。
+- 六候選中五張使用：IMG_3336 戰士局部（去左側 44px 標籤）、IMG_3344 紅袍全貌、IMG_3345 紅袍側面、官網用16張/DSCN1556 風化人物全貌、官網用16張/DSCN0874 騎馬人物全貌。IMG_3334 醒目粉紅標籤淘汰。全部來自數位攝影但不在提供照1；原始 web/ 和攝影檔未修改。
+- /collections/ 只留佛教造像、木藝與肖楠、古典人物造像三張對應照片卡。/collections/figures/ 使用五張獨立 W05 圖，頁首及分類代表圖同步為 weathered 全貌。
+- 本機首頁及 10 個內頁共 11 路徑 HTTP 200；81 個 HTML 引用 CSS/JS/圖片/favicon 資源均 200；node --check assets/js/site.js 通過。CUA 實際檢視首頁選單、三分類入口、人物全貌與燈箱。
+- 約 1200px 未見水平捲軸；但目前瀏覽器不能切換或讀取 1440/1640/768/390px，也不能取 DOM scrollWidth。該四尺寸及數值溢位檢查未驗，且未保存前後截圖；不能宣稱已通過。
+- 初次寫本節時 GitHub W05 尚未發布；遠端 main 已知基準 362a48649626c2d8ddd00f92111b65ab808fb14f。PR/merge/正式站結果須發布後據實補寫。
