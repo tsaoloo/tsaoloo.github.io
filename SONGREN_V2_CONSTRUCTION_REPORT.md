@@ -72,3 +72,46 @@
 - W02 缺檔修復、頁尾精簡、同步與正式站驗收均完成，沒有尚未解決的 W02 發布問題。
 - Google Search Console／Bing Webmaster Tools 所有權驗證及索引結果未做；未取得站主驗證資料，也不在本次發布範圍。
 - 原招牌手寫字尚未準確向量化，現用透明 PNG 字體排字替代標誌，與 W01 記錄一致。
+
+## W03 視覺升級與追加修正（2026-10-17）
+
+### 本次修改範圍
+
+- 以 `tsaoloo.github.io/` 既有完成版本為基準，未重做網站、未改動旁側原始 `web/` 目錄，也未變更其他 Repository。
+- 全站 10 個正式頁面與 `404.html` 已清理訪客可見的「舊站／舊文／舊藏／舊照／舊頁／舊資料」及歷史來源措辭；文章/分類描述改成目前網站可對外使用的中性文字。首頁、分類頁和木藝頁不再把歷史來源當成前台訊息。內部交接文件仍保留必要的來源與歷史紀錄。
+- 頁面圖片引用由 W02 的 71 處增至 108 處（+37 處）；現有影像庫共 63 個檔案，全部至少被一個正式頁面引用。
+- 新增 8 個 WebP：`archive-gallery-wide.webp`、`archive-interior-wide.webp`、`archive-root-sculpture.webp`、`archive-art-screen.webp`、`archive-figure-display.webp`、`archive-painted-work.webp`、`archive-wood-pendants.webp`、`archive-wood-tablets.webp`。來源是專案拍攝全景/空間照片及 `web/images` 中與木藝、畫作相符的作品照片；素材均先檢視再挑選，`web/` 原檔不變。
+- 新增 SVG 枝葉剪影 `assets/brand/branch-silhouette.svg`；CSS 納入淡雅窗櫺格紋、枝葉與分頁專屬米白/木色/古銅層次。全站 sticky header、手機斷點、捲軸樣式沿用並補強；`favicon.ico` 是含 16、32、48 像素尺寸的真實 ICO。
+
+### 逐頁圖片與視覺改動
+
+「頁面圖片數」是引用 `assets/images` 的內容圖，不含 Header/Footer Logo 和燈箱空白容器；「新增引用」與「新增不同檔案」分開計算，重複用圖不混算成新檔。
+
+| 頁面 | 本版內容圖 | 相較 W02 新增引用／不同檔案 | 主要改善 |
+|---|---:|---:|---|
+| 首頁 | 7 | +4／3 | 保留店面主視覺，增加造像、珍珠手珠等分類實景入口 |
+| 收藏理念 `/about/` | 10 | +10／9 | 左文右圖式首屏、作品/空間大圖、交錯細節圖與收藏生活段落 |
+| 名家淺說 `/artists/` | 2 | +2／2 | 首屏作品照片與畫作細節，原文段落內嵌圖文板 |
+| 手珠大賞 `/bead-awards/` | 25 | +1／1 | 首屏增加手珠代表照，保留 24 張作品序列 |
+| 手珠賽況 `/bead-contest/` | 9 | +1／0 | 首屏補入賽況實拍；使用本頁已有照片，未重複複製檔案 |
+| 珍藏分類 `/collections/` | 7 | +7／7 | 首屏藝術照片加六個真實作品圖像式分類入口 |
+| 藝廊 `/gallery/` | 25 | +2／2 | 空間照片首屏與展示造像照，原有藝廊影像保留 |
+| 佛教造像 `/sculpture/` | 11 | +5／5 | 全身、面部/材質細節、窗前展示與其他姿態分組，保留燈箱放大 |
+| 尋訪 `/visit/` | 4 | +1／1 | 首屏加入街景照片，地址資訊仍清楚可讀 |
+| 木藝手珠 `/wood-art/` | 8 | +4／4 | 根木、木牌、木珠細節和作品照片與原有九章交錯排版 |
+
+- 佛教造像頁新增引入照片：`gold-figure-context.webp`、`paired-figures-close.webp`、`paired-figures-window.webp`、`paired-figures-window-portrait.webp`、`blue-green-figure.webp`。頁面將同組造像的全身、神情、窗景與材質視角編排在分段展示中；搭配原有照片後，本頁共有 11 張內容圖。
+- 本次新增 8 個影像檔的素材對照與使用位置見 `SONGREN_V2_IMAGE_MAPPING.md`；逐頁視覺檢查狀態見 `SONGREN_W03_VISUAL_AUDIT.md`。
+
+### 本機檢查
+
+- 正式頁數 10/10；每頁 1 個 H1、1 個正式 Footer，沒有 `.dark-callout`。每頁根路徑資源引用存在。
+- 內容圖 108 處；影像庫 63/63 檔案均有頁面引用；HTML 與 CSS 圖片/字型路徑沒有缺檔。
+- 本機 HTTP `http://127.0.0.1:8765/` 逐一請求 75 個頁面與資源路徑：75/75 回應 200。`site.js` Node 語法檢查通過，CSS 括號成對、sticky header 存在；sitemap 有 10 個正式網址，ICO 標頭/多尺寸有效。
+- 全站訪客前台 HTML、`llms.txt`、`robots.txt`、`sitemap.xml` 掃描未找到禁用歷史來源措辭。
+- 本輪沒有執行瀏覽器截圖/實際點擊操作，因此 1440、768、390px 的視覺像素檢查、手機選單操作與燈箱實際開關不列為本輪已完成；不以靜態檢查代稱畫面驗收。
+
+### 發布狀態
+
+- W03 程式與文件已整理至可發佈狀態；正式 GitHub 同步、Pages 最新部署 SHA 與正式網址 HTTP 驗收：待本次發佈後填入。
+- W02 已部署 commit `d1f6250bbd40424412ad29e8e7c56f6f6439d307`；W02 遠端缺檔原因、既有部署與頁尾驗收細節保留於本報告前文。
