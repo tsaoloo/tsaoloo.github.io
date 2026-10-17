@@ -57,3 +57,17 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 - **正式站：** PR #2 已合併；網站版本 commit `8a894cc3f56d6b570e189767e4d08b7ed8814bf3`。Pages workflow #5 / run `38995047965` 成功。10/10 頁面、CSS/JS、robots、sitemap GET 200；63/63 圖片、雙 Logo、favicon、枝葉/窗櫺/雲紋 SVG HEAD 200。正式頁僅單一 Footer，沒有 `.dark-callout` 或禁用來源措辭。
 - **GitHub W03：** PR #2 merge commit `8a894cc3f56d6b570e189767e4d08b7ed8814bf3`（W03 網站內容發布 SHA）。Pages run `38995047965` success。W02 基準為 `523212c029c468bd30a66b70d22468f6e2477cec`；Settings 原記錄發布來源 `main / /(root)`。
 
+
+## W04 目前狀態（2026-10-17；本機及正式站內容已完成）
+
+- 本機根目錄：F:\架站客\客戶\松仁草廬\tsaoloo.github.io；本輪未修改 web/ 原始資料夾。
+- sculpture/ 本輪新增 7 張精選照片，內容圖總數 18；新增人物造像照片頁 /collections/figures/，有 6 張圖。collections/ 有 7 個照片式分類入口，主選單「珍藏分類」以桌機下拉、手機展開收合方式顯示 7 個子連結。
+- 網站新增 13 張 WebP：7 張佛教造像、6 張人物造像；全站目前 76 張 WebP。敏感女性裸露畫作來源已排除，詳見施工報告與 SONGREN_W04_CATEGORY_PLAN.md。
+- GitHub PR #4 已正常合入 main，網站內容 merge commit：d880facd6f6a2369e868932449e023f06ad9d6e0；未 force push，其他 Repository 和 web/ 未修改。
+- 正式站 HTTP 實測 11 個頁面均為 200；82 個頁面引用資源均為 200，含新造像圖片、CSS、JS、logo、robots.txt、sitemap.xml。正式 sitemap 有 11 個頁面網址。
+- HTML/資源靜態檢查與 site.js 語法檢查通過。瀏覽器實際截圖、1440/768/390 視覺檢查、手機子選單點擊與燈箱互動尚未在本輪人工驗收，請勿標為已通過。
+- 詳細施工、圖片來源及分類計畫分別見 SONGREN_V2_CONSTRUCTION_REPORT.md、SONGREN_V2_IMAGE_MAPPING.md、SONGREN_W04_CATEGORY_PLAN.md；W03 視覺稽核為歷史基線，W04 追加結果見 SONGREN_W03_VISUAL_AUDIT.md。
+
+## 後續接手提示
+
+接續時以 W04 的本機和 main 正式站內容為基準，先讀 SONGREN_W04_CATEGORY_PLAN.md 和最新施工報告。未來若要修改或發布，需依當次授權執行；本輪 W04 授權已用於上述 PR #4。
