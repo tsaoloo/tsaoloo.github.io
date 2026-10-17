@@ -81,6 +81,56 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 - 人物 Hero 改用完整的 w05-figure-weathered-full.webp，分類卡同步；帶醒目標籤候選圖排除，IMG_3336 細節圖裁除左側標籤。
 - 本機 11 個內容路徑 HTTP 200；81 個 HTML 引用資源 HTTP 200；node --check assets/js/site.js 通過。約 1200px 畫面檢查首頁、分類總覽、人物首圖和燈箱。
 - 珍藏分類僅佛教造像 /sculpture/、木藝與肖楠 /wood-art/、古典人物造像 /collections/figures/。手珠大賞/賽況由木藝頁相關入口、名家淺說由收藏理念、草廬藝廊由首頁與頁尾進入；舊頁保留。
-- 遠端 main 基準 362a48649626c2d8ddd00f92111b65ab808fb14f。初次補文件時 W05 尚未發布；發布後須補 PR、merge commit、Pages 與正式站結果。
+- W05 網站內容已由 PR #6 正常合併。W05 branch commit：9576b94593529f9e23223d29e0a15a5f790db286；main merge commit：336a2d2f7eb93a6773f76138acaab3656d30fac8。Pages 部署 run #9（39006853937）成功，部署 SHA 與 main merge commit 相同。
+- 正式站已重新開啟驗收：首頁子選單預設收合，鍵盤展開後只有三個垂直藝術品類別；/collections/ 三卡路徑正確；/collections/figures/ 顯示五張新圖，Hero 全貌含底座，燈箱可開關。正式頁 Footer 僅一組品牌、地址、手機與精簡導覽。
+- 正式站 HTTP：首頁、/collections/、/collections/figures/ 均 200；W05 CSS/JS、五張新增人物圖、robots.txt、sitemap.xml 均 200，圖片回應類型為 image/webp。
+- 約 1200px 畫面未見水平捲軸。1440、1640、768、390px 視窗與 DOM scrollWidth 無法由現有瀏覽器控制面板量測，手機版實機／指定寬度驗收仍待補；不得列為已通過。
 - 本機瀏覽器約 1200px 未見水平捲軸；已修正 .hero-side-note 原 right:-34px 為桌機 10px、手機 8px，移除 main{overflow:clip}。目前無法設定/讀取 1440、1640、768、390px 或 DOM scrollWidth，故這些尺寸未驗；也未保存截圖檔。不得宣稱全尺寸通過。
 - 完整記錄見 SONGREN_W05_NAV_IMAGE_FIX.md；圖片、分類與施工報告末尾已補 W05 章節。
+
+### W05 最新追加更正：八項第一層主選單（2026-10-17）
+
+本節為目前有效的導覽架構，取代本文件較早 W05 段落中「四個既有內容頁只由其他頁面進入」或「主選單只有四項」的描述。四個頁面內容與文章／照片均保留，且恢復為第一層主選單：
+
+1. 首頁 → `/`
+2. 收藏理念 → `/about/`
+3. 珍藏分類 → `/collections/`
+4. 手珠大賞 → `/bead-awards/`
+5. 手珠賽況 → `/bead-contest/`
+6. 名家淺說 → `/artists/`
+7. 藝術與空間 → `/gallery/`
+8. 尋訪 → `/visit/`
+
+珍藏分類的垂直子選單仍只有佛教造像 `/sculpture/`、木藝與肖楠 `/wood-art/`、古典人物造像 `/collections/figures/`。沒有把活動、文章或空間紀錄頁放回子分類。
+
+本輪改動全部 12 份 HTML 共用導覽、`assets/css/site.css` 與 `assets/js/site.js`（14 個程式檔）；CSS/JS cache 版本分別更新至 `w05-r2`、`w05-r3`。桌機寬度不足時縮小間距與字級，1000px 以下切換漢堡；手機保留 0961-096688，Sticky Header 延續。子選單初始收合，鍵盤 Enter 可展開三個垂直項目。
+
+本機檢查：11 個內容路徑 HTTP 200、79 個唯一 HTML 資源引用 HTTP 200；12 份 HTML 的主選單次序與三個子項逐頁核對；`node --check assets/js/site.js` 及 Git whitespace 檢查通過。可用約 1200px 桌面畫面確認八項主選單單行、初始收合、Enter 展開後直向排列，未見水平捲軸。瀏覽器控制介面不能設定 1440、1640、768、390px viewport 或讀取 DOM `scrollWidth`；這些指定尺寸與數值溢位未驗，手機視覺未宣稱通過。
+
+網站修正以正常 PR #8 合併：分支程式 commit `50deb91a8b8dfb6e0484db13b1974d8ac4b0a38d`，main merge commit `1afd79659887c156fa6a27db01b4161d4bb95a45`。Pages run #10（`39007647908`）以該 merge commit 部署成功。正式首頁實際顯示八個第一層入口，初始子選單收合，鍵盤展開為三個垂直藝術分類；約 1200px 桌面未見水平捲軸。正式 `/collections/` 有三張正確入口卡；`/collections/figures/` 的人物 Hero 全貌含頭部與底座，五張新圖可載入，燈箱已開啟及關閉。八個第一層及三個子頁路由、W05 CSS/JS（cache `w05-r2`/`w05-r3`）、五張人物 WebP、robots.txt、sitemap.xml 共 20 個正式 URL 全部 HTTP 200；四個既有頁 `/bead-awards/`、`/bead-contest/`、`/artists/`、`/gallery/` 均可直接 GET 200。未 force push；未動其他 Repository、`web/` 或原始攝影檔。指定 1440/1640/768/390px 與 DOM scrollWidth 仍未能量測，手機尺寸驗收不列通過；可用約 1200px 畫面未見水平捲軸，且未保存截圖檔。
+
+
+## W05 最後追加：共用圖片燈箱（接手狀態 2026-10-17）
+
+W05 導覽更正已由 PR #8 發布（main `1afd79659887c156fa6a27db01b4161d4bb95a45`，Pages run #10 `39007647908` 成功）：八個第一層入口完整保留，珍藏分類下只有佛教造像、木藝與肖楠、古典人物造像三項。四個既有內容頁仍為第一層導覽。
+
+之後新增的燈箱連續瀏覽只寫入本機網站：`assets/js/site.js`、`assets/css/site.css` 與 12 份 HTML（含 404；CSS cache `w05-r3`、JS cache `w05-r4`）。目前具左右按鈕/方向鍵、循環、標題與計數、群組隔離、單圖隱藏箭頭、ESC/背景關閉、焦點還原、捲動鎖定、相鄰圖預載、contain 完整呈現和 swipe handler。沒有新增或改動圖片檔。
+
+已在本機實際測試手珠大賞 24 張循環、手珠賽況 8 張序列、佛教造像分組、人物造像 2 張組、藝廊分組、首頁單圖箭頭隱藏、背景關閉與 ESC 焦點還原。Node `--check` 通過。人物全貌截圖中頭部與底座完整。**390×844 viewport 與觸控/滑動未驗**：viewport override 無效，當前控制介面仍呈桌機尺寸；精確尺寸、scrollWidth 數值亦未驗。
+
+本機這項追加尚未同步發布：沒有追加 commit/PR，正式站仍是 PR #8 的網站版本，不含燈箱功能。停工交接已寫入五份文件；快照 F:\架站客\客戶\松仁草廬\W05-recovery-backup-20261017-r4 已建立，含 24 個來源檔及 manifest.tsv，24/24 雜湊吻合。下一棒接續手機驗收、正式發布及更新部署結果。詳見 SONGREN_W05_NAV_IMAGE_FIX.md。
+## W05 最終接棒：燈箱驗收（2026-10-17；發布前）
+
+### 本機實測
+
+- 本機預覽 http://127.0.0.1:8765/；使用現有瀏覽器 viewport 控制，測試 1440×1000、768×1024、390×844。
+- 首頁、/collections/、/collections/figures/ 三頁在上述寬度下 documentElement.scrollWidth 均等於 clientWidth；未見水平溢位。390px 首頁漢堡選單可開啟，珍藏分類子項可展開為三個垂直項目，手機畫面保留電話。
+- 390px 手珠大賞燈箱：dialog 位於 viewport 內，寬 374px；圖片 object-fit:contain、原圖 800×533 且載入成功；左右箭頭均可見（各 42×48px）；右箭頭切至 2 / 24、左箭頭可返回。背景捲動鎖定前後 scrollY 同為 496；ESC 與關閉按鈕均關閉燈箱並將焦點還原至原作品按鈕。
+- 手機觸控滑動：目前瀏覽器控制介面沒有觸控/Swipe 操作 API，未實測；程式雖有 pointer swipe handler，不能記為通過，待站主用實機左右滑動確認。
+- 1440px 桌機：手珠大賞由 1 / 24 切至 24 / 24，下一張循環回 1 / 24，上一張循環回 24 / 24；按鈕與左右鍵均可切換，ESC 關閉且焦點還原。背景空白處點擊可關閉。
+- 作品群組：手珠賽況 1 / 8→2 / 8；佛教造像 1 / 2→2 / 2；人物造像 1 / 2→2 / 2；草廬藝廊 1 / 6→2 / 6。以上開啟的燈箱圖皆實際載入，CSS 為 contain。人物頁「騎乘人物・全貌」首圖載入 /assets/images/w05-figure-mounted-rider-full.webp，畫面完整包含人物、馬匹與底座。
+- 本機七頁（首頁、分類總覽、人物造像、手珠大賞、手珠賽況、佛教造像、藝廊）共 75 個唯一 CSS、JS、Logo 與圖片資源路徑均回應 HTTP 200；node --check assets/js/site.js 通過；瀏覽器 Console 未見 error。
+
+### 發布狀態
+
+本節為 W05 燈箱發布前驗收紀錄。燈箱尚未有新 commit/PR，正式站目前仍為主選單 PR #8 版本：main 1afd79659887c156fa6a27db01b4161d4bb95a45、Pages run #10（39007647908）；該正式版尚未包含本燈箱。滑動待實機驗收，其餘正式發布與部署資料待發布後補記。
