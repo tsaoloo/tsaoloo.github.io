@@ -35,10 +35,10 @@ submenuItems.forEach(item=>{
     updateSubmenu(item,open,{dismiss:!open});
   });
   item.addEventListener('mouseenter',()=>{
-    if(window.matchMedia('(min-width: 941px)').matches&&!item.classList.contains('is-dismissed'))header?.classList.add('has-open-submenu');
+    if(window.matchMedia('(min-width: 1001px)').matches&&!item.classList.contains('is-dismissed'))header?.classList.add('has-open-submenu');
   });
   item.addEventListener('mouseleave',()=>{
-    if(window.matchMedia('(min-width: 941px)').matches&&!item.contains(document.activeElement))updateSubmenu(item,false);
+    if(window.matchMedia('(min-width: 1001px)').matches&&!item.contains(document.activeElement))updateSubmenu(item,false);
   });
   item.addEventListener('focusin',event=>{
     if(item.classList.contains('is-dismissed')&&event.target===item.querySelector(':scope > a'))return;
@@ -56,7 +56,7 @@ document.addEventListener('keydown',event=>{
   if(event.key==='Escape'){
     const focused=submenuItems.find(item=>item.contains(document.activeElement));
     closeSubmenus({dismissFocus:true});
-    if(menuButton?.getAttribute('aria-expanded')==='true'&&window.matchMedia('(max-width: 940px)').matches){menuButton.setAttribute('aria-expanded','false');menu?.classList.remove('is-open');menuButton.focus()}
+    if(menuButton?.getAttribute('aria-expanded')==='true'&&window.matchMedia('(max-width: 1000px)').matches){menuButton.setAttribute('aria-expanded','false');menu?.classList.remove('is-open');menuButton.focus()}
     else if(focused)focused.querySelector(':scope > a')?.focus();
   }
 });
