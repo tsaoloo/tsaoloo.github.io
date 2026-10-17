@@ -129,3 +129,8 @@
 | 數位攝影\IMG_3334.JPG | 未使用 | 醒目粉紅標籤干擾，淘汰 |
 
 全貌圖採自然比例/contain，局部圖標為細節。W04 舊圖 figure-sage-frontal、figure-thinker-full、figure-thinker-detail、figure-red-robed-front、figure-red-robed-profile、figure-green-robed 已由人物頁新圖替換；檢查須比對完整路徑，避免將 w05-figure 子字串誤判。分類卡與人物 Hero 同用 weathered 全貌。原始照片和 web/ 未修改。
+
+
+### W05 正式發布核對（2026-10-17）
+
+W05 人像頁五張新 WebP 已發布；GitHub PR #6、main merge commit 336a2d2f7eb93a6773f76138acaab3656d30fac8、Pages run #9（39006853937）成功。正式站五張圖片各自 HTTP 200 且回應 image/webp；/collections/figures/ HTML 實際引用五張新圖、不含六個 W04 舊人物圖路徑。瀏覽器檢查 Hero 全貌含底座，燈箱能開啟/關閉。1440/1640/768/390px viewport 未能以現有介面實測，請勿將指定尺寸寫成通過。

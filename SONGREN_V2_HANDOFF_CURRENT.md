@@ -81,6 +81,9 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 - 人物 Hero 改用完整的 w05-figure-weathered-full.webp，分類卡同步；帶醒目標籤候選圖排除，IMG_3336 細節圖裁除左側標籤。
 - 本機 11 個內容路徑 HTTP 200；81 個 HTML 引用資源 HTTP 200；node --check assets/js/site.js 通過。約 1200px 畫面檢查首頁、分類總覽、人物首圖和燈箱。
 - 珍藏分類僅佛教造像 /sculpture/、木藝與肖楠 /wood-art/、古典人物造像 /collections/figures/。手珠大賞/賽況由木藝頁相關入口、名家淺說由收藏理念、草廬藝廊由首頁與頁尾進入；舊頁保留。
-- 遠端 main 基準 362a48649626c2d8ddd00f92111b65ab808fb14f。初次補文件時 W05 尚未發布；發布後須補 PR、merge commit、Pages 與正式站結果。
+- W05 網站內容已由 PR #6 正常合併。W05 branch commit：9576b94593529f9e23223d29e0a15a5f790db286；main merge commit：336a2d2f7eb93a6773f76138acaab3656d30fac8。Pages 部署 run #9（39006853937）成功，部署 SHA 與 main merge commit 相同。
+- 正式站已重新開啟驗收：首頁子選單預設收合，鍵盤展開後只有三個垂直藝術品類別；/collections/ 三卡路徑正確；/collections/figures/ 顯示五張新圖，Hero 全貌含底座，燈箱可開關。正式頁 Footer 僅一組品牌、地址、手機與精簡導覽。
+- 正式站 HTTP：首頁、/collections/、/collections/figures/ 均 200；W05 CSS/JS、五張新增人物圖、robots.txt、sitemap.xml 均 200，圖片回應類型為 image/webp。
+- 約 1200px 畫面未見水平捲軸。1440、1640、768、390px 視窗與 DOM scrollWidth 無法由現有瀏覽器控制面板量測，手機版實機／指定寬度驗收仍待補；不得列為已通過。
 - 本機瀏覽器約 1200px 未見水平捲軸；已修正 .hero-side-note 原 right:-34px 為桌機 10px、手機 8px，移除 main{overflow:clip}。目前無法設定/讀取 1440、1640、768、390px 或 DOM scrollWidth，故這些尺寸未驗；也未保存截圖檔。不得宣稱全尺寸通過。
 - 完整記錄見 SONGREN_W05_NAV_IMAGE_FIX.md；圖片、分類與施工報告末尾已補 W05 章節。

@@ -175,4 +175,14 @@
 - /collections/ 只留佛教造像、木藝與肖楠、古典人物造像三張對應照片卡。/collections/figures/ 使用五張獨立 W05 圖，頁首及分類代表圖同步為 weathered 全貌。
 - 本機首頁及 10 個內頁共 11 路徑 HTTP 200；81 個 HTML 引用 CSS/JS/圖片/favicon 資源均 200；node --check assets/js/site.js 通過。CUA 實際檢視首頁選單、三分類入口、人物全貌與燈箱。
 - 約 1200px 未見水平捲軸；但目前瀏覽器不能切換或讀取 1440/1640/768/390px，也不能取 DOM scrollWidth。該四尺寸及數值溢位檢查未驗，且未保存前後截圖；不能宣稱已通過。
-- 初次寫本節時 GitHub W05 尚未發布；遠端 main 已知基準 362a48649626c2d8ddd00f92111b65ab808fb14f。PR/merge/正式站結果須發布後據實補寫。
+- W05 已由 PR #6 合併並部署；正式網站內容 main commit 為 336a2d2f7eb93a6773f76138acaab3656d30fac8，Pages run #9（39006853937）成功。正式站路由與 W05 資源檢查見本節最後的正式發布結果。
+
+### W05 正式發布與正式站驗收結果（2026-10-17）
+
+- GitHub PR #6 正常合入 main；網站內容 commit 9576b94593529f9e23223d29e0a15a5f790db286，main merge commit 336a2d2f7eb93a6773f76138acaab3656d30fac8。未 force push。
+- GitHub Pages workflow run #9（39006853937）以 merge commit 336a2d2f7eb93a6773f76138acaab3656d30fac8 部署成功。
+- 實際開啟正式首頁：子選單預設收合；鍵盤展開後只見佛教造像、木藝與肖楠、古典人物造像三項直向子項。未見首頁水平捲軸。頁尾只見一組品牌、地址、電話和精簡站內導覽。
+- 正式 /collections/ 顯示三張對應作品分類卡及正確連結；正式 /collections/figures/ 顯示五張新 W05 圖，Hero 全貌含頭部與底座，人物燈箱已實際打開及關閉。
+- 正式 HTTP 檢查：/、/collections/、/collections/figures/、W05 CSS、W05 JS、五張新 WebP、robots.txt、sitemap.xml 共 12 個 URL 全部 200；五張人物圖回應 image/webp。正式三頁 HTML 同時確認 W05 CSS/JS cache version、三個子選單連結、三分類卡，人物頁含五張新圖且無 W04 舊人物圖路徑。
+- 本機檢查仍為 11 個路徑 200、81 個本機引用資源 200、Node JavaScript 語法檢查通過。
+- 目前瀏覽器控制介面沒有設定/讀取 1440、1640、768、390px viewport 或 DOM scrollWidth 的能力。約 1200px 畫面未見水平捲軸；指定尺寸、數值溢位與手機特定寬度未驗收。正式內容已部署，但不能把以上未驗項目宣稱通過。前後截圖檔未保存。
