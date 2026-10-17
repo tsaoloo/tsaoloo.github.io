@@ -48,3 +48,35 @@
 原始來源都保留不動。圖片使用 Pillow 讀取 EXIF 方向後轉為 WebP（quality 86、method 6），輸出不攜帶來源 EXIF；維持原圖比例，圖片標籤具 alt、width、height，主 Hero 為 eager/high fetch priority，其餘圖片 lazy loading。網站 CSS 不裁切作品主體。
 
 招牌字樣無法從照片可靠去背，Logo 改用 Windows 標楷體 `kaiu.ttf` 排成「松仁／草廬」透明 PNG，提供深色及白色兩版，並製作 favicon。它是書法字體排字替代方案，不是原招牌輪廓復原；未輸出 SVG。
+
+## W03 視覺升級新增影像對照（2026-10-17）
+
+| 新增檔案 | 專案來源 | 用途 |
+|---|---|---|
+| `archive-gallery-wide.webp` | `觀古今2016升級\osmo1050121攝\PANORAMA\100_0308\PANO0002.JPG` | about 藝術空間、collections 首屏及空間分類 |
+| `archive-interior-wide.webp` | `觀古今2016升級\osmo1050121攝\PANORAMA\100_0309\PANO0006.JPG` | 首頁/collections 店內空間、about 收藏生活 |
+| `archive-root-sculpture.webp` | `觀古今2016升級\osmo1050121攝\DJI_0358.JPG` | 木藝/collections 的根木主題 |
+| `archive-art-screen.webp` | `觀古今2016升級\osmo1050121攝\DJI_0333.JPG` | 名家淺說作品細節、藝廊圖文 |
+| `archive-figure-display.webp` | `觀古今2016升級\osmo1050121攝\DJI_0265.JPG` | 藝廊展示環境 |
+| `archive-painted-work.webp` | `web\images\j8.jpg` | 畫作/藝術主題分類及名家淺說 |
+| `archive-wood-pendants.webp` | `web\images\j11.jpg` | 木藝章節與手珠細節 |
+| `archive-wood-tablets.webp` | `web\images\j9.jpg` | 木作章節、about 收藏主題 |
+
+共 8 個新最佳化 WebP 檔，均先檢視原始畫面後才挑選；全站目前 63 個圖片檔案都被引用。原始圖片目錄 `web/` 只讀取素材，沒有修改或覆蓋。
+
+### W03 各頁新增圖片引用
+
+| 頁面 | 本版內容圖 | 新增引用 | 新增不同檔案 |
+|---|---:|---:|---:|
+| 首頁 | 7 | 4 | 3 |
+| about | 10 | 10 | 9 |
+| artists | 2 | 2 | 2 |
+| bead-awards | 25 | 1 | 1 |
+| bead-contest | 9 | 1 | 0（引用本頁原有賽況照） |
+| collections | 7 | 7 | 7 |
+| gallery | 25 | 2 | 2 |
+| sculpture | 11 | 5 | 5 |
+| visit | 4 | 1 | 1 |
+| wood-art | 8 | 4 | 4 |
+
+佛教造像頁新增的五個不同照片檔為：`gold-figure-context.webp`（造像全身/場景）、`paired-figures-close.webp`（成對造像細節）、`paired-figures-window.webp`、`paired-figures-window-portrait.webp`（窗前光線與直幅姿態）、`blue-green-figure.webp`（另一姿態）。
