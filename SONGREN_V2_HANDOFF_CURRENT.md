@@ -47,13 +47,13 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 
 未來新增發布仍需依當次任務明確授權；W02 的授權不自動延伸到未來修改。
 
-## W03 目前交接更新（2026-10-17；本次發布中）
+## W03 交接更新（2026-10-17；本次發布已完成）
 
 - **本次授權：** 使用者已明確授權完成 W03 本機修改，並以正常 Git/GitHub 流程同步至 `tsaoloo/tsaoloo.github.io`；不得 force push。授權範圍僅本網站 Repository，本次不改動 `web/` 原始資料夾及其他 Repository。
 - **本機：** `F:\架站客\客戶\松仁草廬\tsaoloo.github.io`。10 個正式頁面均已修改/巡檢；CSS、JavaScript、Logo、真實 ICO、枝葉/窗櫺 SVG 與 63 張影像齊備。網站每頁頁尾為單一正式 Footer。
 - **前台文案：** 全站正式頁與 SEO 根檔已掃除「舊站、舊文、舊藏、舊照」及同類歷史來源字眼；必要來源歷史只留在內部報告。
 - **配圖/視覺：** 本版 108 個內容圖引用、63 個實體圖片檔。頁面新增圖片引用數：首頁 4、about 10、artists 2、bead-awards 1、bead-contest 1、collections 7、gallery 2、sculpture 5、visit 1、wood-art 4。詳細頁數與檔名見施工報告和 `SONGREN_W03_VISUAL_AUDIT.md`。
-- **本機 HTTP：** 預覽根頁與資源路徑 75/75 HTTP 200；正式頁 10/10、sitemap 10 個網址、63/63 圖片有使用且檔案存在、Node JS 語法檢查通過。瀏覽器畫面截圖/實際操作尚未做，請勿將其標成通過。
-- **正式站：** 本次 W03 正式站發布與遠端驗收待完成。發布後需在此列出 W03 PR/merge commit、Pages run、正式域名逐頁與 63 張圖片的 HTTP 結果。
-- **當前 GitHub W02 main 基準：** `523212c029c468bd30a66b70d22468f6e2477cec`。W02 上次合併 `d1f6250bbd40424412ad29e8e7c56f6f6439d307`；發布來源 `main / /(root)`。
+- **本機 HTTP：** 預覽根頁與資源路徑 75/75 HTTP 200；正式頁 10/10、sitemap 10 個網址、63/63 圖片有使用且檔案存在、Node JS 語法檢查通過。本次瀏覽器畫面截圖/實際操作尚未做，請勿將其標成通過。
+- **正式站：** PR #2 已合併；網站版本 commit `8a894cc3f56d6b570e189767e4d08b7ed8814bf3`。Pages workflow #5 / run `38995047965` 成功。10/10 頁面、CSS/JS、robots、sitemap GET 200；63/63 圖片、雙 Logo、favicon、枝葉/窗櫺/雲紋 SVG HEAD 200。正式頁僅單一 Footer，沒有 `.dark-callout` 或禁用來源措辭。
+- **GitHub W03：** PR #2 merge commit `8a894cc3f56d6b570e189767e4d08b7ed8814bf3`（W03 網站內容發布 SHA）。Pages run `38995047965` success。W02 基準為 `523212c029c468bd30a66b70d22468f6e2477cec`；Settings 原記錄發布來源 `main / /(root)`。
 

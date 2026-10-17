@@ -66,5 +66,9 @@
 
 ## GitHub 與正式站狀態
 
-- W02 main 基準：`523212c029c468bd30a66b70d22468f6e2477cec`。W02 已確認 Pages 來源 `main / /(root)`。
-- W03 分支/PR、合併 commit、Pages workflow、正式域名 HTTP 驗收：本稽核初稿建立時待發布。發布完成後在本節補上確切 PR、SHA、Actions run 和實際 HTTP 路徑結果，不將本機檢查當作正式站通過。
+- W02 main 基準：`523212c029c468bd30a66b70d22468f6e2477cec`。W02 設定頁紀錄 Pages 來源 `main / /(root)`。
+- W03 PR #2 已合併；merge commit `8a894cc3f56d6b570e189767e4d08b7ed8814bf3`。GitHub Pages workflow #5 / run `38995047965` 對應相同 SHA 並完成 `success`。
+- 以正式網域實際 GET 首頁及九個內頁：10/10 回應 200。十頁各只有一個 H1、一個正式 Footer，沒有 `.dark-callout` 或禁用歷史來源文字。
+- 正式 CSS、JS、robots.txt、sitemap.xml 均回應 200；sitemap 列出 10 個正式網址。63/63 正式圖片 URL HEAD 200 並回應 image Content-Type；兩個 Logo、favicon.ico/png、三個 CSS 飾紋 SVG 均 HEAD 200。
+- 線上頁面內容包含 W03 cache version；CSS/JS 功能資源成功取得。沒有宣稱以 HTTP HEAD 證明瀏覽器已解碼每張圖片。
+- 本次未執行瀏覽器截圖或實際點擊操作，因此 1440/768/390px 像素畫面、手機選單、燈箱互動仍需瀏覽器驗收。這些狀態維持未驗收，沒有用靜態或 HTTP 結果替代。

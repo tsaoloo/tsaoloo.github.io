@@ -113,5 +113,10 @@
 
 ### 發布狀態
 
-- W03 程式與文件已整理至可發佈狀態；正式 GitHub 同步、Pages 最新部署 SHA 與正式網址 HTTP 驗收：待本次發佈後填入。
-- W02 已部署 commit `d1f6250bbd40424412ad29e8e7c56f6f6439d307`；W02 遠端缺檔原因、既有部署與頁尾驗收細節保留於本報告前文。
+- PR #2（29 個變更檔）已正常合併至 `main`；W03 網站版本合併 commit：`8a894cc3f56d6b570e189767e4d08b7ed8814bf3`。以 merge commit 保留 Git 歷史，沒有 force push。
+- GitHub Pages workflow #5（run `38995047965`）對應上述 merge SHA，完成 `success`。
+- 正式網址 `https://tsaoloo.github.io/`：首頁與九個正式內頁 GET 10/10 回應 200；線上頁面均有 W03 CSS cache version、單一 H1/正式 Footer，無 `.dark-callout` 及禁用歷史來源文案。
+- 正式站 CSS、JS、robots、sitemap 均 GET 200；sitemap 有 10 個正式網址。63/63 圖片 URL 的 HTTP HEAD 均為 200 且回應 image 類 Content-Type；兩個品牌 Logo、ICO、PNG favicon、三個 SVG 飾紋亦均 200。這是 HTTP 資源驗收，非瀏覽器像素解碼測試。
+- 正式 Pages 發布來源在 W02 由 Settings 確認為 `main / /(root)`；本次 workflow 由 `main` 成功部署。
+- 本次未能執行瀏覽器視覺截圖與點擊操作，故 1440/768/390px 的實際畫面、手機選單展開/收合及作品燈箱點擊互動仍待瀏覽器環境驗收。未以 HTTP 200 代替互動驗收。
+- W02 遠端缺檔原因、既有部署與頁尾驗收細節保留於本報告前文；W02 合併 commit 為 `d1f6250bbd40424412ad29e8e7c56f6f6439d307`。
