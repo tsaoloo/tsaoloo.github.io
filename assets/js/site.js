@@ -61,4 +61,146 @@ document.addEventListener('keydown',event=>{
   }
 });
 const dialog=document.querySelector('#lightbox');
-if(dialog){const image=dialog.querySelector('img');const caption=dialog.querySelector('figcaption');const close=dialog.querySelector('.lightbox-close');document.addEventListener('click',event=>{const trigger=event.target.closest('.media-trigger[data-full]');if(!trigger)return;image.src=trigger.dataset.full;image.alt=trigger.dataset.alt||'';caption.textContent=trigger.dataset.caption||trigger.dataset.alt||'';dialog.showModal()});close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});dialog.addEventListener('close',()=>{image.removeAttribute('src');image.alt='';caption.textContent=''})}
+if(dialog){
+  const image=dialog.querySelector('img');
+  const caption=dialog.querySelector('figcaption');
+  const close=dialog.querySelector('.lightbox-close');
+  const content=dialog.querySelector('.lightbox-inner');
+  const counter=document.createElement('span');
+  counter.className='lightbox-counter';
+  counter.setAttribute('aria-live','polite');
+  counter.setAttribute('aria-atomic','true');
+  const makeNavButton=(className,label,symbol)=>{
+    const button=document.createElement('button');
+    button.className=`lightbox-nav ${className}`;
+    button.type='button';
+    button.setAttribute('aria-label',label);
+    button.textContent=symbol;
+    content.append(button);
+    return button;
+  };
+  const previous=makeNavButton('lightbox-previous','上一張作品','‹');
+  const next=makeNavButton('lightbox-next','下一張作品','›');
+  const groupSelector='[data-lightbox-group],.gallery-group,.figure-group,.sculpture-photo-group,.sculpture-highlight,.about-topic';
+  let items=[];
+  let currentIndex=0;
+  let activeTrigger=null;
+  let savedScrollY=0;
+  let savedOverflow={root:'',body:''};
+  let adjacentPreloads=[];
+  let touchStart=null;
+  let loadVersion=0;
+
+  const preloadAdjacent=()=>{
+    adjacentPreloads=[];
+    if(items.length<2)return;
+    const neighborIndexes=new Set([(currentIndex+items.length-1)%items.length,(currentIndex+1)%items.length]);
+    neighborIndexes.forEach(index=>{
+      const preload=new Image();
+      preload.decoding='async';
+      preload.src=items[index].src;
+      adjacentPreloads.push(preload);
+    });
+  };
+  const updateImage=()=>{
+    const item=items[currentIndex];
+    if(!item)return;
+    const version=++loadVersion;
+    image.alt=item.alt;
+    image.classList.add('is-loading');
+    caption.replaceChildren(document.createTextNode(item.caption),counter);
+    counter.textContent=`${currentIndex+1} / ${items.length}`;
+    const canNavigate=items.length>1;
+    previous.hidden=!canNavigate;
+    next.hidden=!canNavigate;
+    const loader=new Image();
+    loader.decoding='async';
+    loader.onload=()=>{
+      if(version!==loadVersion||!dialog.open)return;
+      image.src=item.src;
+      image.classList.remove('is-loading');
+    };
+    loader.onerror=()=>{
+      if(version!==loadVersion||!dialog.open)return;
+      image.removeAttribute('src');
+      image.classList.remove('is-loading');
+      image.alt='圖片載入失敗';
+      caption.replaceChildren(document.createTextNode(`${item.caption}（圖片載入失敗）`),counter);
+    };
+    loader.src=item.src;
+    preloadAdjacent();
+  };
+  const showItem=(index)=>{
+    if(!items.length)return;
+    currentIndex=(index+items.length)%items.length;
+    updateImage();
+  };
+  const galleryFor=(trigger)=>{
+    let group=trigger.closest(groupSelector);
+    if(!group)group=trigger.closest('.photo-grid')||trigger.closest('section')||trigger.closest('main')||document.body;
+    let triggers=[...group.querySelectorAll('.media-trigger[data-full]')];
+    if(!triggers.includes(trigger))triggers=[trigger];
+    return {
+      items:triggers.map(button=>({
+        src:button.dataset.full,
+        alt:button.dataset.alt||button.querySelector('img')?.alt||'',
+        caption:button.dataset.caption||button.dataset.alt||button.querySelector('img')?.alt||''
+      })),
+      index:triggers.indexOf(trigger)
+    };
+  };
+  const navigate=(direction)=>showItem(currentIndex+direction);
+
+  document.addEventListener('click',event=>{
+    const trigger=event.target.closest('.media-trigger[data-full]');
+    if(!trigger)return;
+    const gallery=galleryFor(trigger);
+    items=gallery.items;
+    currentIndex=Math.max(0,gallery.index);
+    activeTrigger=trigger;
+    savedScrollY=window.scrollY;
+    savedOverflow={root:document.documentElement.style.overflow,body:document.body.style.overflow};
+    document.documentElement.style.overflow='hidden';
+    document.body.style.overflow='hidden';
+    caption.replaceChildren(counter);
+    updateImage();
+    dialog.showModal();
+    close.focus({preventScroll:true});
+  });
+  previous.addEventListener('click',()=>navigate(-1));
+  next.addEventListener('click',()=>navigate(1));
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+  dialog.addEventListener('keydown',event=>{
+    if(!dialog.open)return;
+    if(event.key==='ArrowLeft'){event.preventDefault();navigate(-1)}
+    else if(event.key==='ArrowRight'){event.preventDefault();navigate(1)}
+  });
+  content.addEventListener('pointerdown',event=>{
+    if(event.pointerType==='touch')touchStart={x:event.clientX,y:event.clientY};
+  });
+  content.addEventListener('pointerup',event=>{
+    if(!touchStart||event.pointerType!=='touch')return;
+    const dx=event.clientX-touchStart.x;
+    const dy=event.clientY-touchStart.y;
+    touchStart=null;
+    if(items.length>1&&Math.abs(dx)>52&&Math.abs(dx)>Math.abs(dy)*1.25)navigate(dx<0?1:-1);
+  });
+  content.addEventListener('pointercancel',()=>{touchStart=null});
+  dialog.addEventListener('close',()=>{
+    loadVersion++;
+    image.removeAttribute('src');
+    image.alt='';
+    image.classList.remove('is-loading');
+    caption.textContent='';
+    items=[];
+    adjacentPreloads=[];
+    previous.hidden=true;
+    next.hidden=true;
+    document.documentElement.style.overflow=savedOverflow.root;
+    document.body.style.overflow=savedOverflow.body;
+    window.scrollTo(0,savedScrollY);
+    if(activeTrigger?.isConnected)activeTrigger.focus({preventScroll:true});
+    activeTrigger=null;
+  });
+}
