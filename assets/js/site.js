@@ -1,0 +1,6 @@
+document.documentElement.classList.add('js-ready');
+const menuButton=document.querySelector('.menu-toggle');
+const menu=document.querySelector('.site-nav');
+if(menuButton&&menu){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));menu.classList.toggle('is-open',!open)});menu.addEventListener('click',event=>{if(event.target.closest('a')){menuButton.setAttribute('aria-expanded','false');menu.classList.remove('is-open')}})}
+const dialog=document.querySelector('#lightbox');
+if(dialog){const image=dialog.querySelector('img');const caption=dialog.querySelector('figcaption');const close=dialog.querySelector('.lightbox-close');document.addEventListener('click',event=>{const trigger=event.target.closest('.media-trigger[data-full]');if(!trigger)return;image.src=trigger.dataset.full;image.alt=trigger.dataset.alt||'';caption.textContent=trigger.dataset.caption||trigger.dataset.alt||'';dialog.showModal()});close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});dialog.addEventListener('close',()=>{image.removeAttribute('src');image.alt='';caption.textContent=''})}
