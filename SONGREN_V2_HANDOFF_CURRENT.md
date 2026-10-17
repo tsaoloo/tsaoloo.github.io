@@ -8,8 +8,10 @@
 - 第一波網站內容、設計、SEO/GEO、必要根目錄檔案及五份交接文件已完成。
 - 舊站仍在 `F:\架站客\客戶\松仁草廬\web`，原始檔案沒有更動。
 - 本機預覽伺服器目前使用 `127.0.0.1:8765`；Codex 預覽分頁已開啟。
-- 新站目錄尚未初始化 Git repository，也沒有 GitHub remote；未上傳或部署。這樣保留了「禁止擅自上傳／部署」的要求。
-- 搜尋引擎驗證未做，因為沒有提供 Search Console／Bing 驗證資料。
+- W02 已完成本機頁尾修改及正式站缺檔修復。GitHub `main` 已同步 `assets/`、55 張圖片及九個內頁資料夾；正式站 10 頁均已部署並驗收。
+- W02 以 GitHub 登入瀏覽器正常提交並透過 PR #1 合併到 `main`；保留既有 Git 歷史，沒有 force push 或索取/暴露憑證。網站修復合併 commit 為 `d1f6250bbd40424412ad29e8e7c56f6f6439d307`。
+- GitHub Pages 發布來源已於登入 Settings → Pages 確認：Deploy from a branch / `main` / `/(root)`。
+- GitHub Pages 部署 run `38990357652` 已成功；發布來源是 `main / /(root)`。正式站 10 頁、三尺寸、55 張圖片、手機選單、燈箱、Footer、robots 與 sitemap 均通過 W02 驗收。Google/Bing 所有權驗證未做，未提供驗證資料。
 
 ## 本機預覽
 
@@ -31,3 +33,16 @@ python -m http.server 8765 --bind 127.0.0.1 --directory "F:\架站客\客戶\松
 2. 若取得正式手寫 Logo 原稿或高解析無反光招牌影像，再評估輪廓清理與 SVG 向量化；現有標誌已清楚標示為字體排字替代方案。
 3. 店主提供營業時間、服務／交易政策或逐件藏品的材質與年代依據後，再逐頁補充事實資料；目前未留待補寫的假資料。
 4. 若未來要發布，先確認 GitHub repository／remote 與預定 branch，再依使用者明確授權建立版本並部署；目前資料夾可直接作為 Pages 靜態網站根目錄。
+
+
+## W02 交接更新（2026-10-17）— 已完成
+
+- **本機根目錄：** `F:\架站客\客戶\松仁草廬\tsaoloo.github.io`。完整檔案可直接作為 GitHub Pages root；原 `web/` 未更動。
+- **缺檔原因：** W02 開始時 GitHub `main` 只有 13 個根目錄檔案，沒有 `assets/` 和九個正式內頁資料夾，導致正式站資源失效及內頁 404。Pages 發布設定本來就是 `main / /(root)`。
+- **同步：** GitHub PR #1 已正常合入 `main`，70 個檔案變更，修復網站的合併 commit 為 `d1f6250bbd40424412ad29e8e7c56f6f6439d307`。已補齊 55 張 WebP、兩款 Logo、CSS/JS、九個內頁目錄及根目錄首頁/404；保留 README、SEO 根目錄檔案和既有歷史。沒有 force push。
+- **Footer：** 所有 10 個正式頁面和 404 已移除深色重複區塊；Footer 僅一個 Logo、品牌、地址、手機、四個精簡導覽；首頁正文「尋訪松仁草廬」保留。桌機/平板約 152px、390px 手機約 203px。
+- **本機驗收：** HTTP 預覽 10 頁 × 三尺寸共 30 組；CSS/JS、Hero、Footer、手機選單、燈箱及 55 張圖片引用正常。
+- **正式站驗收：** Pages run `38990357652`（#3）對應 `d1f6250`，24 秒 Success。實際正式網域 10 頁 × 三尺寸 30 組通過；55/55 圖片載入、沒有水平溢位/破圖/404頁；手機選單與燈箱正常；Footer 每頁僅一組品牌/地址/電話；robots.txt 與含 10 個網址的 sitemap.xml 可讀。
+- **尚未做：** Search Console/Bing Webmaster Tools 所有權驗證及索引狀態檢查；未取得驗證資料。原手寫招牌 Logo 向量化仍依 W01 記錄待正式原稿。
+
+未來新增發布仍需依當次任務明確授權；W02 的授權不自動延伸到未來修改。
