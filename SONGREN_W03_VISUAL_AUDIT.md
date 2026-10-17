@@ -72,3 +72,6 @@
 - 正式 CSS、JS、robots.txt、sitemap.xml 均回應 200；sitemap 列出 10 個正式網址。63/63 正式圖片 URL HEAD 200 並回應 image Content-Type；兩個 Logo、favicon.ico/png、三個 CSS 飾紋 SVG 均 HEAD 200。
 - 線上頁面內容包含 W03 cache version；CSS/JS 功能資源成功取得。沒有宣稱以 HTTP HEAD 證明瀏覽器已解碼每張圖片。
 - 本次未執行瀏覽器截圖或實際點擊操作，因此 1440/768/390px 像素畫面、手機選單、燈箱互動仍需瀏覽器驗收。這些狀態維持未驗收，沒有用靜態或 HTTP 結果替代。
+## W04 延續稽核（2026-10-17）
+
+W04 的分類入口、造像補圖、上線 commit 與正式網域 HTTP 驗收已記錄於 SONGREN_W04_CATEGORY_PLAN.md 及 SONGREN_V2_CONSTRUCTION_REPORT.md。本節不覆寫上方 W03 當時的頁數和照片數，避免混淆版本：W04 後全站共有 11 個正式頁面、76 張 WebP；sculpture/ 為 18 張內容照片，collections/figures/ 為 6 張照片。敏感畫作排除來源、各新增圖片對照及未完成的瀏覽器視覺互動驗收，亦見上述文件。

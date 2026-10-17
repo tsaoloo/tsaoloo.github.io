@@ -80,3 +80,37 @@
 | wood-art | 8 | 4 | 4 |
 
 佛教造像頁新增的五個不同照片檔為：`gold-figure-context.webp`（造像全身/場景）、`paired-figures-close.webp`（成對造像細節）、`paired-figures-window.webp`、`paired-figures-window-portrait.webp`（窗前光線與直幅姿態）、`blue-green-figure.webp`（另一姿態）。
+
+## W04 佛教造像與人物造像新增影像（2026-10-17）
+
+本輪新增 13 張 WebP，原始照片保留於專案素材資料夾，網站使用最佳化副本。以下來源路徑以專案根目錄 F:\架站客\客戶\松仁草廬 為準。
+
+| 網站檔名 | 原始照片 | 使用頁面／畫面 |
+|---|---|---|
+| sculpture-stone-mounted-full.webp | 數位攝影/980815/IMG_0916.JPG | /sculpture/；騎乘姿態全貌 |
+| sculpture-stone-beast-detail.webp | 數位攝影/980815/IMG_0924.JPG | /sculpture/；獸首與表面細節 |
+| sculpture-lotus-seat.webp | 數位攝影/980815/IMG_1014.JPG | /sculpture/；蓮座坐像 |
+| sculpture-reclining-face.webp | 數位攝影/980815/IMG_0953.JPG | /sculpture/；臥姿面容 |
+| sculpture-reclining-portrait.webp | 數位攝影/980815/IMG_0957.JPG | /sculpture/；臥姿上身與衣紋 |
+| sculpture-gold-buddha.webp | 數位攝影/IMG_3375.JPG | /sculpture/；金色坐像 |
+| sculpture-white-guanyin.webp | 數位攝影/IMG_3363.JPG | /sculpture/；白色坐像 |
+| figure-sage-frontal.webp | 數位攝影/提供照1/IMAGE_080.jpg | /collections/figures/；端坐人物正面 |
+| figure-thinker-full.webp | 數位攝影/提供照1/IMAGE_096.jpg | /collections/figures/；倚案人物全貌 |
+| figure-thinker-detail.webp | 數位攝影/提供照1/IMAGE_101.jpg | /collections/figures/；倚案人物神情細節 |
+| figure-red-robed-front.webp | 數位攝影/提供照1/IMAGE_103.jpg | /collections/figures/；朱衣人物正面 |
+| figure-red-robed-profile.webp | 數位攝影/提供照1/IMAGE_107.jpg | /collections/figures/；朱衣人物側影 |
+| figure-green-robed.webp | 數位攝影/提供照1/IMAGE_110.jpg | /collections/figures/；人物造像首屏／全貌 |
+
+### 分類入口代表圖
+
+- 佛教造像：gold-figure-front.webp
+- 木藝與肖楠：archive-root-sculpture.webp
+- 手珠大賞：bead-award-14.webp
+- 手珠賽況：bead-contest-07.webp
+- 名家淺說：archive-painted-work.webp（展示環境影像）
+- 空間與近照：shop-front-street.webp
+- 古典人物造像：figure-green-robed.webp
+
+### 敏感畫作排除
+
+未將有明顯女性胸部裸露的畫作及其同組照片用於前台、首圖、縮圖或燈箱：數位攝影/980815/IMG_0931.JPG–IMG_0943.JPG 同組影像，以及數位攝影/990306收檔/官網用16張/DSCN0770.JPG。檔案只留在原素材位置，不加入網站 assets。對畫面無法判斷者採排除處理。
