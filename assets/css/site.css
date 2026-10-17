@@ -184,3 +184,11 @@ html{scrollbar-color:#a88751 #eee8dc;scrollbar-width:thin;scroll-padding-top:108
 .lightbox-close{z-index:3}
 @media(max-width:700px){.lightbox{width:calc(100vw - 16px);max-width:none;max-height:calc(100dvh - 16px);padding:8px}.lightbox-inner{width:100%;padding-inline:44px}.lightbox img{max-width:calc(100vw - 112px);max-height:calc(100dvh - 142px)}.lightbox-nav{width:42px;height:48px;font-size:36px}.lightbox-previous{left:0}.lightbox-next{right:0}.lightbox-close{top:2px;right:2px;min-width:44px;min-height:44px}.lightbox figcaption{gap:8px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.lightbox img{transition:none}}
+/* W05: compact, accessible directory of external friend sites */
+.footer-friends{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+.footer-friends .footer-title{margin-bottom:8px;font-size:13px;color:#b9aa8e}
+.footer-friend-links{display:flex;flex-wrap:wrap;gap:3px 14px;margin:0;padding:0;list-style:none}
+.footer-friend-links li{min-width:0;max-width:100%}
+.footer-friend-links a{display:inline-block;max-width:100%;color:#bdb8ac;font-size:12px;line-height:1.8;text-decoration:none;overflow-wrap:anywhere}
+.footer-friend-links a:hover,.footer-friend-links a:focus-visible{color:#eee5d3;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.footer-friends{margin-top:18px;padding-top:14px}.footer-friend-links{gap:4px 12px}.footer-friend-links a{font-size:12px}}
